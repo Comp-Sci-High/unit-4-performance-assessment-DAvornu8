@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blonded Archive - All Songs</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>Blonded Archive</h1>
+    <nav>
+      <a href="/" class="btn">Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="overview">
+      <h2>All Songs</h2>
+      <div class="cards-container">
+        <% for (let i = 0; i < songs.length; i++) { %>
+          <div class="song-card">
+            <h4><%= songs[i].title %></h4>
+            <p><strong>Album:</strong> <%= songs[i].album %></p>
+            <p><strong>Release Year:</strong> <%= songs[i].releaseYear %></p>
+            <p><strong>Mood:</strong> <%= songs[i].mood %></p>
+            <p><strong>Favorite Lyric:</strong> "<%= songs[i].favoriteLyric %>"</p>
+            <a href="/songs/<%= songs[i].id %>" class="btn btn-small">View Details</a>
+          </div>
+        <% } %>
+      </div>
+
+      <div class="back-home">
+        <a href="/" class="btn btn-large">Back to Home</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Blonded Archive</p>
+  </footer>
+</body>
+</html>
